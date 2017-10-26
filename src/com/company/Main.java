@@ -52,29 +52,34 @@ public class Main {
                System.out.println ("Please Enter url for the Tab: " );
                tab.setUrl (  keyboard.nextLine ());
 
-
-
-
-               System.out.println ("Do you want to Add another tab? (yes/No)" );
-               yesNo= keyboard.nextLine ();
-
-
-
-//          do {
-//          System.out.println ("Invalid Entry ,Enter a valid entry(Yes or No) " );
-//
-//             yesNo=keyboard.nextLine ();
-//         }while (!yesNo.equalsIgnoreCase ( "Yes" )&& !yesNo.equalsIgnoreCase ( "No" ));
-//
-
-
                browser.addTabs ( tab );
+
+
+
+
+
+               do {
+                   System.out.println ("Do you want to Add another tab? (yes/No)" );
+                   yesNo= keyboard.nextLine ();
+
+                   if(!yesNo.equalsIgnoreCase ( "Yes" )&& !yesNo.equalsIgnoreCase ( "No" ))
+                   {
+                       System.out.println ("Invalid Entry ,Enter a valid entry(yes or no) " );
+
+                   }
+
+
+         }while (!yesNo.equalsIgnoreCase ( "Yes" )&& !yesNo.equalsIgnoreCase ( "No" ));
+
+
+
+
 
            }while(yesNo.equalsIgnoreCase ( "Yes" ) && !yesNo.equalsIgnoreCase ( "No" ));
 
 
 
-           Prining();
+           Printing();
        }else{
            System.out.println ("Use another Browser!" );
        }
@@ -82,7 +87,7 @@ public class Main {
 
 
     }
-    public static void Prining()
+    public static void Printing()
     {
         System.out.println ("Browser Title: "+  browser.getTitle ());
 
